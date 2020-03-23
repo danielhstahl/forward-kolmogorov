@@ -147,6 +147,94 @@ The forward Kolmogorov equation describes, for a fixed point of time \(s\) and \
 
 \subsection{Brownian Motion}
 
+When \(dX_t=dW_t\), the Backward equation becomes
+
+\[\frac{\partial p} {\partial s} + \frac{1}{2} \frac{\partial^2 p}{\partial x^2} =0\]
+
+The conditional density of a Brownian Motion is
+
+\[p_{bm}(s, T, x, y)=\frac{1}{\sqrt{2\pi} \sqrt{T-s}} e^{-\frac{(y-x)^2}{2(T-s)}} \]
+
+Taking the first derivative with respect to \(s\):
+
+\[\frac{\partial p_{bm}(s, T, x, y)}{\partial s}=  \frac{1}{2}p_{bm}(s, T, x, y)\left(\frac{1}{T-s}-\frac{(y-x)^2}{(T-s)^2}\right)  \]
+
+Taking the second derivative with respect to \(x\):
+
+\[\frac{\partial^2 p_{bm}(s, T, x, y)}{\partial x^2}=  p_{bm}(s, T, x, y)\left(\frac{(y-x)^2}{(T-s)^2}-\frac{1}{T-s}\right)  \]
+
+Combining,
+\[\frac{\partial p} {\partial s} + \frac{1}{2} \frac{\partial^2 p}{\partial x^2} =0\]
+
+The Forward equation becomes
+
+\[\frac{\partial p} {\partial T} -\frac{1}{2} \frac{\partial^2 p}{\partial y^2} =0\]
+
+Taking the first derivative with respect to \(T\):
+
+\[\frac{\partial p_{bm}(s, T, x, y)}{\partial T}=  \frac{1}{2}p_{bm}(s, T, x, y)\left(\frac{(y-x)^2}{(T-s)^2}-\frac{1}{T-s}\right)  \]
+
+Taking the second derivative with respect to \(y\):
+
+\[\frac{\partial^2 p_{bm}(s, T, x, y)}{\partial y^2}=  p_{bm}(s, T, x, y)\left(\frac{(y-x)^2}{(T-s)^2}-\frac{1}{T-s}\right)  \]
+
+Combining, 
+
+\[\frac{\partial p} {\partial T} -\frac{1}{2} \frac{\partial^2 p}{\partial y^2} =0\]
+
+\subsection{Geometric Brownian Motion}
+
+When \(dX_t=\alpha X_t dt+\sigma X_t dW_t\), the Backward equation becomes
+
+\[\frac{\partial p} {\partial s} +\alpha x \frac{\partial p}{\partial x} + \frac{1}{2} \sigma^2 x^2 \frac{\partial^2 p}{\partial x^2} =0\]
+
+The conditional density of a Geometric Brownian Motion is
+
+\[p_{gbm}(s, T, x, y)=\frac{1}{\sigma y\sqrt{2\pi} \sqrt{T-s} } e^{-\frac{\left( \log\left(\frac{y}{x}\right) -\left(\alpha-\frac{\sigma^2}{2}\right)(T-s)\right)^2}{2\sigma^2(T-s)}} \]
+
+Taking the first derivative with respect to \(s\):
+
+
+\begin{multline*}
+\frac{\partial p_{gbm}(s, T, x, y)}{\partial s}  =  p_{gbm}(s, T, x, y) \frac{1}{2(T-s)} + \\p_{gbm}(s, T, x, y)\frac{ \log\left(\frac{y}{x}\right) -\left(\alpha-\frac{\sigma^2}{2}\right)(T-s)}{2(T-s)}   - \\p_{gbm}(s, T, x, y)\frac{ \log\left(\frac{y}{x}\right) -\left(\alpha-\frac{\sigma^2}{2}\right)(T-s)}{\sigma^2(T-s)}\alpha  -\\p_{gbm}(s, T, x, y)\frac{\left( \log\left(\frac{y}{x}\right) -\left(\alpha-\frac{\sigma^2}{2}\right)(T-s)\right)^2}{2\sigma^2(T-s)}  
+\end{multline*}
+
+
+Taking the first derivative with respect to \(x\):
+
+\[\frac{\partial p_{gbm}(s, T, x, y)}{\partial x}=  p_{bm}(s, T, x, y)\left(\frac{\log\left(\frac{y}{x}\right)- \left(\alpha-\frac{\sigma^2}{2}\right) (T-s) }{\sigma^2 (T-s)x}\right)  \]
+
+Taking the second derivative with respect to \(x\):
+
+\begin{multline*}\frac{\partial^2 p_{bm}(s, T, x, y)}{\partial x^2}=  p_{bm}(s, T, x, y)*\\\left(  \left(\frac{\log\left(\frac{y}{x}\right)- \left(\alpha-\frac{\sigma^2}{2}\right) (T-s) }{\sigma^2 (T-s)x}\right)^2 -\frac{1}{\sigma^2 x^2 (T-s)} - \frac{\log\left(\frac{y}{x}\right)- \left(\alpha-\frac{\sigma^2}{2}\right) (T-s) }{\sigma^2 (T-s)x^2}   \right) \end{multline*}
+
+Applying the coefficients,
+
+\[\alpha x \frac{\partial p}{\partial x}=p \alpha \left(\frac{\log\left(\frac{y}{x}\right)- \left(\alpha-\frac{\sigma^2}{2}\right) (T-s) }{\sigma^2 (T-s)}\right)\]
+
+\begin{multline*}\frac{1}{2} \sigma^2 x^2 \frac{\partial^2 p}{\partial x^2}\\=p\left( \frac{\left(\log\left(\frac{y}{x}\right)- \left(\alpha-\frac{\sigma^2}{2}\right) \right)^2 (T-s) }{2\sigma^2 (T-s)}- \frac{1}{ 2(T-s)} - \frac{\log\left(\frac{y}{x}\right)- \left(\alpha-\frac{\sigma^2}{2}\right) (T-s) }{ 2(T-s)}      \right)\end{multline*}
+
+
+\[\frac{\partial p} {\partial s} + \frac{1}{2} \frac{\partial^2 p}{\partial x^2} =0\]
+
+The Forward equation becomes
+
+\[\frac{\partial p} {\partial T} -\frac{1}{2} \frac{\partial^2 p}{\partial y^2} =0\]
+
+Taking the first derivative with respect to \(T\):
+
+\[\frac{\partial p_{bm}(s, T, x, y)}{\partial T}=  \frac{1}{2}p_{bm}(s, T, x, y)\left(\frac{(y-x)^2}{(T-s)^2}-\frac{1}{T-s}\right)  \]
+
+Taking the second derivative with respect to \(y\):
+
+\[\frac{\partial^2 p_{bm}(s, T, x, y)}{\partial y^2}=  p_{bm}(s, T, x, y)\left(\frac{(y-x)^2}{(T-s)^2}-\frac{1}{T-s}\right)  \]
+
+Combining, 
+
+\[\frac{\partial p} {\partial T} -\frac{1}{2} \frac{\partial^2 p}{\partial y^2} =0\]
+
+
+
 
 
 
