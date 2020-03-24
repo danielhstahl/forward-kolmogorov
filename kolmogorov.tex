@@ -84,7 +84,7 @@ The backward Kolmogorov equation is an application of \ref{fk}.  It describes, f
 \begin{theorem}\label{bk}
 	Let \(X_t\) be defined as in \ref{sde}. If it exists, and fixing \(T\) and \(y\), the transition density \(p(s, T, x, y)\) of \(X_t\) is a solution to the following partial differential equation:
 	\[\frac{\partial p}{\partial s} + Ap=0 \]
-	With terminal condition \(p(T, T, x, y)=\delta(x-y)\)
+	With terminal condition \(p(T, T, x, y)=\delta(x-y)\).  \(A\) operates on \(x\).
 \end{theorem}
 
 \begin{proof}
@@ -105,6 +105,8 @@ The forward Kolmogorov equation describes, for a fixed point of time \(s\) and \
 	Let \(X_t\) be defined as in \ref{sde}.  If it exists, and fixing \(s\) and \(x\), the transition density \(p(s, T, x, y)\) of \(X_t\) is a solution to the following partial differential equation:
 	\[\frac{\partial p}{\partial T} + A^*p=0 \]
 	With initial condition \(p(s, s, x, y)=\delta(x-y)\), where \(A^*f\) is defined as: \[-\frac{\partial \left(\alpha(y, t) f\right)}{\partial y} + \frac{1}{2}\frac{\partial^2 \left(\sigma(y, t) f\right) } {\partial y^2}   \]
+	
+	\(A^*\) operates on \(y\).
 \end{theorem}
 \begin{proof}
 	The adjoint of \(A\) is defined as an operator \(\hat{A}\) such that 
