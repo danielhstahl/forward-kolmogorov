@@ -102,7 +102,7 @@ Let \(X_t\) be the solution to \ref{sde}.  Then the generator \(A\) of \(X_t\) i
 The backward Kolmogorov equation is an application of theorem \ref{fk}.  It describes, for a fixed point at time \(T\), how the conditional density of \(X_t\) evolves.  I write this conditional density as \(p(s, T, x, y)\) where \(s\) is the ``current'' time, \(x\) is the ``current'' value of \(X_t\), \(T\) is the ``terminal'' time, and \(y\) is the ``dummy'' variable for integration.  The expectation \(\mathbb{E}[g(X_T)|\mathcal{F}_s]\) can thus be written as \(\int_\mathbb{R} g(y) p(s, T, x, y) dy \).   
 \\
 \\
-\begin{theorem}\label{bk}
+\begin{theorem}\label{backk}
 	Let \(X_t\) be defined as in \ref{sde}. If it exists, and fixing \(T\) and \(y\), the transition density \(p(s, T, x, y)\) of \(X_t\) is a solution to the following partial differential equation:
 	\[\frac{\partial p}{\partial s} + Ap=0 \]
 	With terminal condition \(p(T, T, x, y)=\delta(x-y)\).  \(A\) operates on \(x\).
@@ -122,7 +122,7 @@ The backward Kolmogorov equation is an application of theorem \ref{fk}.  It desc
 
 The forward Kolmogorov equation describes, for a fixed point of time \(s\) and \(x\), how the conditional density of \(X_t\) evolves.  In many applications this is a more useful formulation.  For many applications we know \(s\) and \(x\), and are attempting to understand the potential outcomes in the future.  
 
-\begin{theorem}\label{fk}
+\begin{theorem}\label{forwardk}
 	Let \(X_t\) be defined as in \ref{sde}.  If it exists, and fixing \(s\) and \(x\), the transition density \(p(s, T, x, y)\) of \(X_t\) is a solution to the following partial differential equation:
 	\[\frac{\partial p}{\partial T} + A^*p=0 \]
 	With initial condition \(p(s, s, x, y)=\delta(x-y)\), where \(A^*f\) is defined as: \[-\frac{\partial \left(\alpha(y) f\right)}{\partial y} + \frac{1}{2}\frac{\partial^2 \left(\sigma(y) f\right) } {\partial y^2}   \]
