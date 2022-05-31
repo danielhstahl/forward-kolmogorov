@@ -143,7 +143,7 @@ The forward Kolmogorov equation describes, for a fixed point of time \(s\) and \
 	\[ = - \int_\mathbb{R}  \frac{\partial \left( f(z)  \alpha(z) \right)}{\partial z} g(z) dz +\frac{1}{2} \int_\mathbb{R} \frac{\partial ^2 \left(f(z)\sigma^2(z) \right)}{\partial z^2} g(z) dz   \]
 	
 	
-	\[ \implies \hat{A}= -\frac{\partial \left(\alpha(y) f\right)}{\partial y} + \frac{1}{2}\frac{\partial^2 \left(\sigma(y) f\right) } {\partial y^2} =A^* \]
+	\[ \implies \hat{A}= -\frac{\partial \left(\alpha(z) f\right)}{\partial z} + \frac{1}{2}\frac{\partial^2 \left(\sigma^2(z) f\right) } {\partial z^2} =A^* \]
 	
 	Armed with the adjoint, I now proceed to directly compute the dynamics of the density.  By Dynkan's formula,
 	
@@ -156,7 +156,7 @@ The forward Kolmogorov equation describes, for a fixed point of time \(s\) and \
 	
 	Using the adjoint,
 	\[\int_\mathbb{R} h(y) \frac{\partial p(s, T, x, y)}{\partial T} dy= \int_\mathbb{R}  h(y) A^* p(s, T, x, y) dy  \]
-	Where the adjoint operates on the \(y\) variable.  The only way this equation holds for all \(h(y)\) is if 
+	The only way this equation holds for all \(h(y)\) is if 
 	
 	\[\frac{\partial p(s, T, x, y)}{\partial T} = A^* p(s, T, x, y)  \]
 	
